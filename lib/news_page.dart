@@ -25,6 +25,7 @@ class _NewsPageState extends State<NewsPage> {
       appBar: AppBar(
         title: const Text('News'),
       ),
+
       body: Consumer<NewsChangeNotifier>(
         builder: (context, notifier, child) {
           if (notifier.isLoading) {
@@ -34,6 +35,7 @@ class _NewsPageState extends State<NewsPage> {
               ),
             );
           }
+          
           return ListView.builder(
             itemCount: notifier.articles.length,
             itemBuilder: (_, index) {
