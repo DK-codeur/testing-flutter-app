@@ -6,6 +6,7 @@ import 'package:mocktail/mocktail.dart';
 
 class MockNewsService extends Mock implements NewsService {}
 
+//arrange act assert test
 void main() {
   late NewsChangeNotifier sut; //sut: systeme under test
   late MockNewsService mockNewsService;
@@ -15,7 +16,7 @@ void main() {
     sut = NewsChangeNotifier(mockNewsService);
   });
 
-  test(
+  test( 
     "initial value are correct", 
     () {
       expect(sut.articles, []);
